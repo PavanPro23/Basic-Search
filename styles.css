@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: chocolate;
+}
+
+.main{
+    position: relative;
+    left: 40%;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.error{
+    color:white;
+    border:red 2px solid;
+    padding: 2px;
+    width: 300px;
+    font-size: 40px;
+}
+
+.main input{
+    padding: 10px 10px 10px 10px;
+    border: solid;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.main ul{
+    list-style: none;
+}

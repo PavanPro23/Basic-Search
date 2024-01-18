@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="styles.css">
+<div class="main">
+    <h1>Search Eng</h1>
+    <input type="text" oninput="searchList()" placeholder="Search---" id="searchInput"/>
+    <p id="error" style="display:none;"></p>
+    <ul id="list">
+        <li>Html</li>
+        <li>Node</li>
+        <li>Mongo</li>
+        <li>Sql</li>
+        <li>React</li>
+    </ul>
+    <div id="notFoundMessage" style="display: none;" class="error">Item not found</div>
+</div>
+
+<script>
+    function searchList() {
+    var input, filter, ul, li, a, i, txtValue, notFoundMessage;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('list');
+    li = ul.getElementsByTagName('li');
+    notFoundMessage = document.getElementById('notFoundMessage');
+  
+    for (i = 0; i < li.length; i++) {
+      a = li[i];
+      txtValue = a.textContent || a.innerText;
+  
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = '';
+        notFoundMessage.style.display = 'none';
+      } else {
+        li[i].style.display = 'none';
+      }
+    }
+  
+    // Show message when no items are found
+    if (Array.from(li).every(item => item.style.display === 'none')) {
+      notFoundMessage.style.display ='block';
+    }
+  }
+</script>
